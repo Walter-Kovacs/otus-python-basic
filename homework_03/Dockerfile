@@ -15,5 +15,5 @@ RUN poetry install --only main
 
 COPY . .
 
-CMD python3 main.py
+CMD uvicorn main:app --host 0.0.0.0
 EXPOSE 8000
