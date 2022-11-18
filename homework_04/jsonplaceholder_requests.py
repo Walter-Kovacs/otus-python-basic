@@ -1,8 +1,6 @@
 """
 создайте асинхронные функции для выполнения запросов к ресурсам (используйте aiohttp)
 """
-import asyncio
-
 from aiohttp import ClientResponse, ClientSession
 
 USERS_DATA_URL = "https://jsonplaceholder.typicode.com/users"

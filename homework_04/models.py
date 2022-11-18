@@ -59,4 +59,3 @@ class Post(Base):
     body = Column(Text, nullable=False)
 
     user = relationship('User', back_populates='posts', uselist=False)
-

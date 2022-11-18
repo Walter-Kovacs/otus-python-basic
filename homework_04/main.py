@@ -45,7 +45,7 @@ async def create_data_in_db(session: AsyncSession):
     users_data: list[dict]
     posts_data: list[dict]
     users_data, posts_data = await asyncio.gather(fetch_users_data(), fetch_posts_data())
-    
+
     await load_users_into_db(session, users_data)
     await load_posts_into_db(session, posts_data)
 
