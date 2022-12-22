@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block page_title %}
+    {{ author.name }}
+{% endblock %}
+
+{% block body %}
+    <div class="h2">
+        {{ author.name }}
+    </div>
+    <div>
+        {{ author.description }}
+    </div>
+    <div class="container mt-3">
+        <div class="h5">Books</div>
+        <ul>
+            {% for book in author.books %}
+                <li>
+                    <a href="{{ url_for('books.DETAILS', book_id=book.id) }}">
+                        {{ book.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
