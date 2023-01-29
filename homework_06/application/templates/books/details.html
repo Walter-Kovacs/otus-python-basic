@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block page_title %}
+    {{ book.title }}
+{% endblock %}
+
+{% block body %}
+    <div class="h2">
+        {{ book.title }}
+    </div>
+    <div class="container mt-3">
+        {% for author in book.authors %}
+            <a href="{{ url_for('authors.DETAILS', author_id=author.id) }}">
+                    {{ author.name }}
+            </a>
+            {% if not loop.last %}, {% endif %}
+        {% endfor %}
+    </div>
+    <div class="container mt-3">
+        <div class="h5">
+            Abstract
+        </div>
+        {{ book.abstract }}
+    </div>
+    <div class="container mt-3">
+        <div class="h5">Count</div>
+        {{ book.count }}
+    </div>
+{% endblock %}
